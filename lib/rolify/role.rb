@@ -33,7 +33,7 @@ module Rolify
       end
       role
     end
-    alias_method :grant! :add_role!
+    alias_method :grant!, :add_role!
 
     def has_role?(role_name, resource = nil)
       if new_record?
