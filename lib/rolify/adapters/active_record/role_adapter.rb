@@ -16,6 +16,10 @@ module Rolify
         relation.role_ids |= [role.id]
       end
 
+      def add!(relation, role)
+        relation.roles << role
+      end
+
       def remove(relation, role_name, resource = nil)
         cond = { :name => role_name }
         cond[:resource_type] = (resource.is_a?(Class) ? resource.to_s : resource.class.name) if resource
